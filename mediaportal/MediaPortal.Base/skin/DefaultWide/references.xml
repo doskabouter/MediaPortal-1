@@ -256,20 +256,25 @@
     <height>40</height>
     <textXOff>10</textXOff>
     <textYOff>6</textYOff>
-    <textureFocus>togglebutton-on-focus.png</textureFocus>
-    <textureNoFocus>togglebutton-on-nofocus.png</textureNoFocus>
-    <AltTextureFocus>togglebutton-off-focus.png</AltTextureFocus>
-    <AltTextureNoFocus>togglebutton-off-nofocus.png</AltTextureNoFocus>
-    <label>-</label>
+    <textureFocus>button_focus.png</textureFocus>
+    <textureNoFocus>button_nofocus.png</textureNoFocus>
     <font>font12</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
     <disabledcolor>ff808080</disabledcolor>
     <textcolorNoFocus>ff6FAFE1</textcolorNoFocus>
-    <dimColor>ffcccccc</dimColor>
+    <dimColor>ff000000</dimColor>
     <shadowAngle>45</shadowAngle>
     <shadowDistance>1</shadowDistance>
     <shadowColor>ff000000</shadowColor>
+    <markWidth>29</markWidth>
+    <markHeight>28</markHeight>
+    <markXOff>10</markXOff>
+    <markYOff>10</markYOff>
+    <markalign>right</markalign>
+    <markvalign>middle</markvalign>
+    <textureCheckmark>check-box.png</textureCheckmark>
+    <textureCheckmarkNoFocus>check-boxNF.png</textureCheckmarkNoFocus>
   </control>
   <control>
     <description>sort button</description>
@@ -865,8 +870,9 @@
     <description>default check button</description>
     <type>checkbutton</type>
     <id>0</id>
-    <width>260</width>
-    <height>40</height>
+    <id>0</id>
+    <posX>533</posX>
+    <posY>250</posY>
     <width>260</width>
     <height>40</height>
     <textXOff>10</textXOff>
@@ -882,9 +888,6 @@
     <shadowAngle>45</shadowAngle>
     <shadowDistance>1</shadowDistance>
     <shadowColor>ff000000</shadowColor>
-    <textureFocus>button_focus.png</textureFocus>
-    <textureNoFocus>button_nofocus.png</textureNoFocus>
-    <font>font12</font>
     <markWidth>29</markWidth>
     <markHeight>28</markHeight>
     <markXOff>10</markXOff>
@@ -893,8 +896,5 @@
     <markvalign>middle</markvalign>
     <textureCheckmark>check-box.png</textureCheckmark>
     <textureCheckmarkNoFocus>check-boxNF.png</textureCheckmarkNoFocus>
-    
-    <textalign>left</textalign>
-    <textvalign>middle</textvalign>
   </control>
 </controls>

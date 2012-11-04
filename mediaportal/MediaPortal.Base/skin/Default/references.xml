@@ -251,26 +251,33 @@
     <description>default togglebutton</description>
     <type>togglebutton</type>
     <id>0</id>
-    <posX>399</posX>
-    <posY>250</posY>
+    <posX>72</posX>
+    <posY>287</posY>
     <width>230</width>
     <height>40</height>
     <textXOff>7</textXOff>
     <textYOff>6</textYOff>
-    <textureFocus>togglebutton-on-focus.png</textureFocus>
-    <textureNoFocus>togglebutton-on-nofocus.png</textureNoFocus>
-    <AltTextureFocus>togglebutton-off-focus.png</AltTextureFocus>
-    <AltTextureNoFocus>togglebutton-off-nofocus.png</AltTextureNoFocus>
-    <label>-</label>
+    <textureFocus>button_focus.png</textureFocus>
+    <textureNoFocus>button_nofocus.png</textureNoFocus>
     <font>font12</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
     <disabledcolor>ff808080</disabledcolor>
     <textcolorNoFocus>ff6FAFE1</textcolorNoFocus>
-    <dimColor>ffcccccc</dimColor>
+    <dimColor>ff000000</dimColor>
     <shadowAngle>45</shadowAngle>
     <shadowDistance>1</shadowDistance>
     <shadowColor>ff000000</shadowColor>
+    <markWidth>28</markWidth>
+    <markHeight>28</markHeight>
+    <markXOff>10</markXOff>
+    <markYOff>10</markYOff>
+    <markalign>right</markalign>
+    <markvalign>middle</markvalign>
+    <textureCheckmark>check-box.png</textureCheckmark>
+    <textureCheckmarkNoFocus>check-boxNF.png</textureCheckmarkNoFocus>
+    <textalign>left</textalign>
+    <textvalign>middle</textvalign>
   </control>
   <control>
     <description>sort button</description>
@@ -866,8 +873,8 @@
     <description>default check button</description>
     <type>checkbutton</type>
     <id>0</id>
-    <width>230</width>
-    <height>40</height>
+    <posX>72</posX>
+    <posY>287</posY>
     <width>230</width>
     <height>40</height>
     <textXOff>7</textXOff>
@@ -883,9 +890,6 @@
     <shadowAngle>45</shadowAngle>
     <shadowDistance>1</shadowDistance>
     <shadowColor>ff000000</shadowColor>
-    <textureFocus>button_focus.png</textureFocus>
-    <textureNoFocus>button_nofocus.png</textureNoFocus>
-    <font>font12</font>
     <markWidth>28</markWidth>
     <markHeight>28</markHeight>
     <markXOff>10</markXOff>
