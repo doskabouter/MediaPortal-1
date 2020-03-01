@@ -794,9 +794,6 @@ namespace MediaPortal.Player
           }
         }
 
-        double fps = _workerFps;
-        string strFile = _workerStrFile;
-        MediaType type = _workerType;
         double currentRR = 0;
         if (GUIGraphicsContext.DX9Device != null && !GUIGraphicsContext.DX9Device.Disposed)
         {
@@ -833,7 +830,7 @@ namespace MediaPortal.Player
           double newRR;
           string newExtCmd;
           string newRRDescription;
-          FindExtCmdfromSettings(fps, out newRR, out newExtCmd, out newRRDescription);
+          FindExtCmdfromSettings(_workerFps, out newRR, out newExtCmd, out newRRDescription);
 
           if (newRR > 0 && (currentRR != newRR || forceRefreshRate) ||
               (GUIGraphicsContext.ForcedRefreshRate3D && !GUIGraphicsContext.ForcedRefreshRate3DDone))
@@ -848,7 +845,7 @@ namespace MediaPortal.Player
               Thread.Sleep(10000);
             }
 
-            if (newExtCmd?.Length == 0)
+            if (String.IsNullOrEmpty(newExtCmd))
             {
               Log.Info(
                 "RefreshRateChanger.SetRefreshRateBasedOnFPS: using internal win32 method for changing refreshrate. current is {0}hz, desired is {1}",
@@ -858,7 +855,7 @@ namespace MediaPortal.Player
               Win32.CycleRefreshRate((uint) GUIGraphicsContext.DX9Device.DeviceCaps.AdapterOrdinal, newRR);
               NotifyRefreshRateChanged(newRRDescription, false);
             }
-            else if (RunExternalJob(newExtCmd, strFile, type, deviceReset) && newRR != currentRR)
+            else if (RunExternalJob(newExtCmd, _workerStrFile, _workerType, deviceReset) && newRR != currentRR)
             {
               Win32.FixDwm();
               NotifyRefreshRateChanged(newRRDescription, false);
@@ -878,7 +875,7 @@ namespace MediaPortal.Player
             {
               Log.Info(
                 "RefreshRateChanger.SetRefreshRateBasedOnFPS: could not find a matching refreshrate based on {0} fps (check config)",
-                fps);
+                _workerFps);
             }
             else
             {
