@@ -497,7 +497,7 @@ namespace MediaPortal.Player
       Music,
       Recording,
       Unknown
-    } ;
+    };
 
     #endregion
 
@@ -639,7 +639,7 @@ namespace MediaPortal.Player
       }
     }
 
-    private static void FindExtCmdfromSettings(double fps, double currentRR, bool deviceReset, out double newRR,
+    private static void FindExtCmdfromSettings(double fps, out double newRR,
                                                out string newExtCmd, out string newRRDescription)
     {
       GetRefreshRateConfiguration();
@@ -834,7 +834,7 @@ namespace MediaPortal.Player
           double newRR;
           string newExtCmd;
           string newRRDescription;
-          FindExtCmdfromSettings(fps, currentRR, deviceReset, out newRR, out newExtCmd, out newRRDescription);
+          FindExtCmdfromSettings(fps, out newRR, out newExtCmd, out newRRDescription);
 
           if (newRR > 0 && (currentRR != newRR || forceRefreshRate) ||
               (GUIGraphicsContext.ForcedRefreshRate3D && !GUIGraphicsContext.ForcedRefreshRate3DDone))
@@ -920,8 +920,6 @@ namespace MediaPortal.Player
       NumberFormatInfo provider = new NumberFormatInfo();
       provider.NumberDecimalSeparator = ".";
       double defaultFPS = 0;
-      bool deviceReset = false;
-      bool force_refresh_rate = false;
       using (Settings xmlreader = new MPSettings())
       {
         enabled = xmlreader.GetValueAsBool("general", "autochangerefreshrate", false);
@@ -935,7 +933,6 @@ namespace MediaPortal.Player
           }
         }
 
-        force_refresh_rate = xmlreader.GetValueAsBool("general", "force_refresh_rate", false);
         bool useDefaultHz = xmlreader.GetValueAsBool("general", "use_default_hz", false);
 
         if (!useDefaultHz)
@@ -968,8 +965,6 @@ namespace MediaPortal.Player
             }
           }
         }
-
-        deviceReset = xmlreader.GetValueAsBool("general", "devicereset", false);
       }
 
       SetRefreshRateBasedOnFPS(defaultFPS, "", MediaType.Unknown);
